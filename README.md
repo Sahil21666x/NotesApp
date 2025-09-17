@@ -29,20 +29,49 @@ A full-stack notes application built with the MERN stack (MongoDB, Express.js, R
 
 ```
 saas-notes-mern/
-├── backend/                 # Node.js/Express backend
-│   ├── models/             # MongoDB models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── server.js           # Main server file
-│   └── package.json        # Backend dependencies
-├── frontend/               # React frontend
+├── backend/                  # Node.js/Express backend
+│   ├── middleware/           # Custom middleware (auth, validation)
+│   │   ├── auth.js
+│   │   └── validation.js
+│   ├── models/               # MongoDB models (Note, Tenant, User)
+│   │   ├── Note.js
+│   │   ├── Tenant.js
+│   │   └── User.js
+│   ├── routes/               # API routes (auth, notes, tenants, users)
+│   │   ├── auth.js
+│   │   ├── notes.js
+│   │   ├── tenants.js
+│   │   └── users.js
+│   ├── scripts/              # Utility scripts
+│   │   └── seed.js
+│   ├── server.js             # Main server file
+│   ├── package.json          # Backend dependencies
+│   ├── README.md             # Backend documentation
+│   └── vercel.json           # Vercel deployment config
+├── frontend/                 # React frontend
+│   ├── public/               # Static assets
+│   │   └── vite.svg
 │   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── contexts/       # React contexts
-│   │   ├── services/       # API services
-│   │   └── App.jsx         # Main app component
-│   └── package.json        # Frontend dependencies
-└── README.md               # This file
+│   │   ├── assets/           # Asset files (react.svg)
+│   │   ├── components/       # React components
+│   │   │   ├── auth/         # Auth components (Login, Register)
+│   │   │   ├── layout/       # Layout components (Dashboard, Header)
+│   │   │   └── notes/        # Notes components (NoteCard, NoteForm, NotesList)
+│   │   ├── contexts/         # React contexts (AuthContext)
+│   │   ├── services/         # API services (api.js)
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── eslint.config.js      # ESLint config
+│   ├── index.html            # Main HTML file
+│   ├── package.json          # Frontend dependencies
+│   ├── postcss.config.js     # PostCSS config
+│   ├── README.md             # Frontend documentation
+│   ├── tailwind.config.js    # Tailwind CSS config
+│   ├── vercel.json           # Vercel deployment config
+│   └── vite.config.js        # Vite config
+└── README.md                 # Project documentation (this file)
 ```
 
 ## 🛠️ Tech Stack
